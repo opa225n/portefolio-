@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Vanié Bi Gohi Roland | Assistant Informatique & Design Graphique à
+      Distance
+    </title>
+    <!-- Icônes FontAwesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      :root {
+        --primary: #2563eb;
+        --secondary: #16a34a;
+        --dark: #0f172a;
+        --light: #f8fafc;
+        --gray: #64748b;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      body {
+        background-color: var(--light);
+        color: var(--dark);
+        line-height: 1.6;
+        padding-bottom: 70px;
+      }
+
+      header {
+        background: linear-gradient(135deg, #1e293b, #0f172a);
+        color: white;
+        padding: 60px 20px;
+        text-align: center;
+      }
+
+      header h1 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+      }
+
+      header h2 {
+        color: #60a5fa;
+        font-size: 1.3rem;
+        font-weight: 400;
+        margin-bottom: 20px;
+      }
+
+      header p {
+        max-width: 700px;
+        margin: 0 auto 25px auto;
+        color: #cbd5e1;
+      }
+
+      .cta-group {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 12px 24px;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: transform 0.2s, background 0.3s;
+      }
+
+      .btn:hover {
+        transform: translateY(-2px);
+      }
+
+      .btn-primary {
+        background-color: var(--primary);
+        color: white;
+      }
+      .btn-success {
+        background-color: var(--secondary);
+        color: white;
+      }
+
+      container {
+        max-width: 1000px;
+        margin: 40px auto;
+        padding: 0 20px;
+        display: block;
+      }
+
+      section {
+        background: white;
+        padding: 30px;
+        margin-bottom: 30px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08);
+      }
+
+      h3 {
+        color: var(--primary);
+        border-bottom: 2px solid #e2e8f0;
+        padding-bottom: 8px;
+        margin-bottom: 20px;
+        font-size: 1.5rem;
+      }
+
+      /* GRILLE SERVICES */
+      .grid-services {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+      }
+
+      .card {
+        background: #f8fafc;
+        padding: 20px;
+        border-radius: 6px;
+        border-left: 4px solid var(--primary);
+      }
+
+      .card i {
+        font-size: 1.8rem;
+        color: var(--primary);
+        margin-bottom: 10px;
+      }
+
+      /* TARIFS */
+      .grid-pricing {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 20px;
+      }
+
+      .price-card {
+        border: 1px solid #e2e8f0;
+        border-radius: 8px;
+        padding: 25px;
+        text-align: center;
+        position: relative;
+        background: white;
+      }
+
+      .price-card.featured {
+        border: 2px solid var(--primary);
+        box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.1);
+      }
+
+      .price-card .badge {
+        position: absolute;
+        top: -12px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--primary);
+        color: white;
+        padding: 2px 12px;
+        font-size: 0.8rem;
+        border-radius: 12px;
+        font-weight: bold;
+      }
+
+      .price {
+        font-size: 2rem;
+        font-weight: bold;
+        color: var(--dark);
+        margin: 15px 0;
+      }
+
+      .price-card ul {
+        text-align: left;
+        margin-bottom: 20px;
+        list-style: none;
+      }
+
+      .price-card ul li {
+        padding: 6px 0;
+        border-bottom: 1px solid #f1f5f9;
+        font-size: 0.95rem;
+      }
+
+      /* FORMULAIRE DE CONTACT */
+      form {
+        display: grid;
+        gap: 15px;
+      }
+
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+      }
+
+      input,
+      select,
+      textarea {
+        padding: 12px;
+        border: 1px solid #cbd5e1;
+        border-radius: 6px;
+        font-size: 1rem;
+      }
+
+      button[type='submit'] {
+        background-color: var(--primary);
+        color: white;
+        padding: 12px;
+        border: none;
+        border-radius: 6px;
+        font-size: 1rem;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      /* BOUTON FLOTTANT WHATSAPP */
+      .whatsapp-float {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #25d366;
+        color: white;
+        border-radius: 50px;
+        padding: 12px 20px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        text-decoration: none;
+        font-weight: bold;
+        z-index: 1000;
+      }
+
+      footer {
+        text-align: center;
+        padding: 20px;
+        color: var(--gray);
+        font-size: 0.9rem;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- BOUTON WHATSAPP FLOTTANT -->
+    <a
+      href="https://wa.me/33746348871?text=Bonjour%20Roland,%20j'ai%20besoin%20d'une%20assistance%20informatique%20ou%20design."
+      class="whatsapp-float"
+      target="_blank"
+    >
+      <i class="fa-brands fa-whatsapp" style="font-size: 1.5rem"></i>
+      <span>Besoin d'aide ?</span>
+    </a>
+
+    <header>
+      <h1>Vanié Bi Gohi Roland</h1>
+      <h2>Assistant Informatique à Distance & Graphiste Designer</h2>
+      <p>
+        Problème informatique ? Besoin d'un site web, d'un visuel graphique ou
+        d'une configuration Odoo ? Je vous accompagne à distance rapidement et
+        efficacement.
+      </p>
+      <div class="cta-group">
+        <a href="#demande" class="btn btn-primary"
+          ><i class="fa-solid fa-paper-plane"></i> Demander une intervention</a
+        >
+        <a
+          href="https://wa.me/33746348871"
+          class="btn btn-success"
+          target="_blank"
+          ><i class="fa-brands fa-whatsapp"></i> Contact WhatsApp</a
+        >
+      </div>
+    </header>
+
+    <container>
+      <!-- SERVICES -->
+      <section id="services">
+        <h3>Mes Services à Distance</h3>
+        <div class="grid-services">
+          <div class="card">
+            <i class="fa-solid fa-headset"></i>
+            <h4>Dépannage & Support PC/Mac</h4>
+            <p>
+              Nettoyage, suppression de virus, résolution de lenteurs,
+              installation de logiciels et configuration système à distance
+              (AnyDesk/TeamViewer).
+            </p>
+          </div>
+          <div class="card">
+            <i class="fa-solid fa-palette"></i>
+            <h4>Design Graphique & Visuels</h4>
+            <p>
+              Création de visuels sous Adobe Photoshop et Illustrator : logos,
+              affiches, bannières web, retouche d'images et supports de
+              communication.
+            </p>
+          </div>
+          <div class="card">
+            <i class="fa-solid fa-laptop-code"></i>
+            <h4>Création Web & Odoo</h4>
+            <p>
+              Création de sites web professionnels, intégration de vos éléments
+              graphiques, configuration d'ERP Odoo pour TPE/PME.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION COMPÉTENCES -->
+      <section>
+        <h3>Compétences Techniques & Logiciels</h3>
+        <ul>
+          <li>
+            <strong>Logiciels de Design :</strong> Adobe Photoshop, Adobe
+            Illustrator, Design web
+          </li>
+          <li><strong>Systèmes d'exploitation :</strong> Windows, Mac OS</li>
+          <li>
+            <strong>Outils Web & ERP :</strong> Odoo (Gestion ERP & Création de
+            sites Web)
+          </li>
+          <li>
+            <strong>Bureautique & Rédaction :</strong> Suite Office (Word), mise
+            en page de documents & CV
+          </li>
+          <li>
+            <strong>Langues :</strong> Français (Courant), Anglais
+            (Intermédiaire), Espagnol (Notions)
+          </li>
+        </ul>
+      </section>
+
+      <!-- TARIFS ET FORFAITS -->
+      <section id="tarifs">
+        <h3>Forfaits & Tarifs Transparents</h3>
+        <div class="grid-pricing">
+          <div class="price-card">
+            <h4>Assistance Informatique</h4>
+            <div class="price">30 €</div>
+            <ul>
+              <li>✓ Diagnostic du problème</li>
+              <li>✓ Prise en main à distance (30-45 min)</li>
+              <li>✓ Nettoyage / Installation logicielle</li>
+            </ul>
+            <a
+              href="#demande"
+              class="btn btn-primary"
+              style="width: 100%; justify-content: center"
+              >Réserver</a
+            >
+          </div>
+
+          <div class="price-card featured">
+            <div class="badge">Populaire</div>
+            <h4>Pack Design & Graphisme</h4>
+            <div class="price">Sur Devis</div>
+            <ul>
+              <li>✓ Création de logo / Identité visuelle</li>
+              <li>✓ Affiches, flyeurs, bannières réseaux</li>
+              <li>✓ Fichiers sources Photoshop / Illustrator</li>
+            </ul>
+            <a
+              href="#demande"
+              class="btn btn-primary"
+              style="width: 100%; justify-content: center"
+              >Demander un devis</a
+            >
+          </div>
+
+          <div class="price-card">
+            <h4>Pack Site Web & Odoo</h4>
+            <div class="price">Sur Devis</div>
+            <ul>
+              <li>✓ Création de site web vitrine</li>
+              <li>✓ Intégration de visuels personnalisés</li>
+              <li>✓ Configuration ERP Odoo</li>
+            </ul>
+            <a
+              href="#demande"
+              class="btn btn-primary"
+              style="width: 100%; justify-content: center"
+              >Demander un devis</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- FORMULAIRE DE DEMANDE -->
+      <section id="demande">
+        <h3>Demander une Assistance ou un Devis</h3>
+        <form action="https://formspree.io/f/mwlpzwyp" method="POST">
+          <div class="form-group">
+            <label for="nom">Nom complet :</label>
+            <input
+              type="text"
+              id="nom"
+              name="name"
+              placeholder="Ex: Vanie Roland"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="contact">E-mail ou Téléphone :</label>
+            <input
+              type="text"
+              id="contact"
+              name="contact"
+              placeholder="Ex: 06 12 34 56 78 / email@example.com"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="service">Type de besoin :</label>
+            <select id="service" name="service">
+              <option value="Dépannage rapide">
+                Dépannage / Lenteur informatique
+              </option>
+              <option value="Création Graphique">
+                Création Graphique (Photoshop / Illustrator)
+              </option>
+              <option value="Projet Web Odoo">
+                Création de site Web / Odoo
+              </option>
+              <option value="Autre">Autre demande</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Décrivez votre problème ou besoin :</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="4"
+              placeholder="Expliquez brièvement votre projet ou votre problème..."
+              required
+            ></textarea>
+          </div>
+          <input
+            type="hidden"
+            name="_replyto"
+            value="vaniebigohiroland@gmail.com"
+          />
+          <button type="submit">
+            <i class="fa-solid fa-paper-plane"></i> Envoyer ma demande
+          </button>
+        </form>
+      </section>
+
+      <!-- CONTACT -->
+      <section>
+        <h3>Coordonnées Directes</h3>
+        <p><strong>Téléphone / WhatsApp :</strong> +33 07 46 34 88 71</p>
+        <p><strong>E-mail :</strong> vaniebigohiroland@gmail.com</p>
+        <p>
+          <strong>Localisation :</strong> 16 Lotissement les sorbiers 2,33113
+          Saint-Symphorien France
+        </p>
+      </section>
+    </container>
+
+    <footer>
+      <p>
+        &copy; 2026 Vanié Bi Gohi Roland — Assistance Informatique & Design
+        Graphique à Distance.
+      </p>
+    </footer>
+  </body>
+</html>
