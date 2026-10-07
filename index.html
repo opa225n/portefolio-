@@ -171,7 +171,9 @@ textarea{min-height:110px;resize:vertical}
 #formMsg{font-size:.9rem}
 @media (max-width:860px){.contact{grid-template-columns:1fr}}
 
-footer{padding-block:28px;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted);display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
+footer{padding-block:28px 96px;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted);display:flex;flex-direction:column;align-items:center;text-align:center;gap:6px}
+footer .legal{font-size:.8rem}
+footer .copy{font-weight:600;color:var(--ink)}
 .fab{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));background:var(--wa);color:#fff;border-radius:999px;padding:12px 18px;font-weight:600;text-decoration:none;box-shadow:0 10px 24px -10px rgba(0,0,0,.5);z-index:6;font-size:.9rem}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}.btn:hover{transform:none}}
 </style>
@@ -416,8 +418,8 @@ Menaces supprimées : 4</pre></div>
   </section>
 
   <footer>
-    <span>© 2026 Vanié Bi Gohi Roland · Assistance informatique & design graphique</span>
-    <span>Mentions légales · Politique de confidentialité</span>
+    <span class="legal">Mentions légales · Politique de confidentialité</span>
+    <span class="copy">© 2026 Vanié Bi Gohi Roland · Tous droits réservés</span>
   </footer>
 </main>
 
